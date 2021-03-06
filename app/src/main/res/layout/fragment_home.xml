@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundFloating">
+
+    <TextView android:id="@+id/languageLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Language:"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorTextPrimary"
+        android:paddingHorizontal="@dimen/fab_margin"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/spinnerLanguage"/>
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spinnerLanguage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:entries="@array/languages" />
+
+    <TextView
+        android:id="@+id/text_home"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="40dp"
+        android:background="@color/colorBackgroundTintParchmentLight"
+        android:paddingHorizontal="16dp"
+        android:text="Start a Good Friday devotion"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/languageLabel" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/text_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/text_home">
+
+        <RadioButton
+            android:id="@+id/radioForATime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="for a time"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radioAroundAnArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="around and area"
+            android:textStyle="bold" />
+
+    </RadioGroup>
+
+    <!-- "Prayer Alerts by Time" section: -->
+
+    <TextView
+        android:id="@+id/textByTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Prayer Alerts by Time"
+        android:textSize="9pt"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupTop" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:text="Total Prayer Time:"
+        android:textSize="7pt"
+        app:layout_constraintEnd_toStartOf="@id/radioGroup1"
+        app:layout_constraintTop_toTopOf="@id/radioGroup1" />
+
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textByTime">
+
+        <RadioButton
+            android:id="@+id/radio240"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="24 hours"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radio010"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 hour"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radio005"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1/2 hour"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radioManual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Manual Mode"
+            android:textStyle="bold" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textViewStartTimeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="12dp"
+        android:text="When to start:"
+        android:textSize="7pt"
+        app:layout_constraintStart_toStartOf="@id/textByTime"
+        app:layout_constraintTop_toBottomOf="@id/textView3" />
+
+    <LinearLayout
+        android:id="@+id/timePickLayout"
+        android:layout_width="174dp"
+        android:layout_height="57dp"
+        android:layoutDirection="rtl"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/textByTime"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStartTimeLabel">
+
+        <ImageButton
+            android:id="@+id/ibTimePick"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/parchment_900x741"
+            android:padding="5dp"
+            android:src="@drawable/ic_time_picker" />
+
+        <EditText
+            android:id="@+id/editTextStartTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="5dp"
+            android:hint="Now"
+            android:textSize="10pt"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/startRowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layoutDirection="rtl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timePickLayout">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mbStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:layout_marginHorizontal="20dp"
+            android:text="@string/start_this_devotion"
+            android:textAppearance="@style/Widget.MaterialComponents.Button"
+            android:textSize="12pt"
+            app:cornerRadius="15dp"/>
+
+        <CheckBox android:id="@+id/cbSilentAlerts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layoutDirection="ltr"
+            android:layout_gravity="left"
+            android:text="Silent Alerts" />
+
+    </LinearLayout>
+
+    <!-- "Prayer Alerts by Location" section: -->
+
+    <TextView
+        android:id="@+id/textByLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:enabled="false"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Prayer Alerts by Location"
+        android:textSize="9pt"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/textByTime"
+        app:layout_constraintTop_toBottomOf="@id/startRowLayout" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:enabled="false"
+        android:text="Type of Prayer Walk:"
+        android:textSize="7pt"
+        app:layout_constraintEnd_toStartOf="@id/radioGroup2"
+        app:layout_constraintTop_toBottomOf="@id/textByLocation" />
+
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="108dp"
+        android:layout_height="78dp"
+        android:enabled="false"
+        app:layout_constraintEnd_toEndOf="@+id/radioGroup1"
+        app:layout_constraintStart_toStartOf="@+id/radioGroup1"
+        app:layout_constraintTop_toTopOf="@+id/textByLocation">
+
+        <RadioButton
+            android:id="@+id/radioCircleWalk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:enabled="false"
+            android:text="Circle Walk"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radioPlaceWalk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="Place Walk"
+            android:textStyle="bold" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textViewPlaceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:enabled="false"
+        android:text="Place/Location:"
+        android:textSize="7pt"
+        app:layout_constraintStart_toStartOf="@+id/textViewStartTimeLabel"
+        app:layout_constraintTop_toBottomOf="@id/textView2" />
+
+    <LinearLayout
+        android:id="@+id/locationPickLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:gravity="center_vertical"
+        android:layoutDirection="rtl"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/radioGroup2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPlaceLabel">
+
+        <ImageButton
+            android:id="@+id/ibPlacePick"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/parchment_900x741"
+            android:enabled="false"
+            android:padding="5dp"
+            android:src="@drawable/ic_location" />
+
+        <EditText
+            android:id="@+id/editTextPlace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="St. Roch's"
+            android:textSize="7pt"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mbStartWalk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:enabled="false"
+        android:paddingHorizontal="10dp"
+        android:text="Start this Journey"
+        android:textAppearance="@style/Widget.MaterialComponents.Button"
+        android:textSize="12pt"
+        app:cornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="@id/locationPickLayout"
+        app:layout_constraintTop_toBottomOf="@id/locationPickLayout" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05109489" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

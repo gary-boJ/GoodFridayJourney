@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#700000</color>
+    <color name="colorPrimaryDark">#3C2601</color>
+    <color name="colorOnPrimary">#FFDDAA</color>
+    <color name="colorAccent">#AA1010</color>
+    <color name="colorAccent80pct">#CCAA1010</color>
+    <color name="colorAccentDeep50pct">#88AF3232</color>
+    <color name="colorBackgroud">#C9A64C</color>
+    <color name="colorBackgroundFloating">#77471F01</color>
+    <color name="colorTextPrimary">#FFDDAA</color>
+    <color name="colorTextPrimaryLight">#553300</color>
+    <color name="colorBackgroundTintParchmentDark">#B88E46</color>
+    <color name="colorBackgroundTintParchment">#855525</color>
+    <color name="colorBackgroundTintParchmentLight">#44C9AC64</color>
+</resources>
